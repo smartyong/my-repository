@@ -1,0 +1,39 @@
+package com.example.study.demo.java8.lambda;
+
+/**
+ * Created by s94pcp on 2020/4/8.
+ */
+public class Java8Test {
+//Java8 新特性测试 --接口提供默认实现
+
+    public static void main(String args[]){
+        Vehicle vehicle = new Car();
+        vehicle.print();
+    }
+}
+
+interface Vehicle {
+    default void print(){
+        System.out.println("我是一辆车!");
+    }
+
+    static void blowHorn(){
+        System.out.println("按喇叭!!!");
+    }
+}
+
+interface FourWheeler {
+    default void print(){
+        System.out.println("我是一辆四轮车!");
+    }
+}
+
+class Car implements Vehicle, FourWheeler {
+    public void print(){
+        Vehicle.super.print();
+        FourWheeler.super.print();
+        Vehicle.blowHorn();
+        System.out.println("我是一辆汽车!");
+    }
+}
+
