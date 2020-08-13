@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.study.dao.PersionDao">
+    <resultMap id="result" type="com.example.study.domain.Persion">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="age" column="age"/>
+        <result property="mobile" column="mobile"/>
+
+    </resultMap>
+
+    <select id="persionList" resultMap="result">
+            Select * from persion
+    </select>
+
+    <select id="findOne" parameterType="int" resultMap="result">
+            SELECT * from persion WHERE id=#{id}
+    </select>
+
+    <insert id="insertPersion" parameterType="com.example.study.domain.Persion"
+
+            keyProperty="id" useGeneratedKeys="true">
+
+        INSERT INTO persion (id,username,age,mobile)
+        VALUES (
+        #{id},
+        #{username,jdbcType=VARCHAR},
+         #{age},
+         #{mobile,jdbcType=VARCHAR}
+        )
+
+    </insert>
+    <delete id="delete" parameterType="int">
+        DELETE FROM persion WHERE id=#{id}
+    </delete>
+
+    <update id="update" parameterType="com.example.study.domain.Persion">
+        update persion SET persion.username=#{username},persion.age=#{age},persion.mobile=#{mobile}   WHERE persion.id=#{id}
+    </update>
+</mapper>

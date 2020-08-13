@@ -17,6 +17,7 @@ public class ClassLoadTest {
         Collection proxy= (Collection) Proxy.newProxyInstance(Collection.class.getClassLoader(), coll.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                System.out.println("aaaaaaaaaaaaaa");
                 return proxy;
             }
         });
