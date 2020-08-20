@@ -19,6 +19,7 @@
 		<powermock.version>1.7.4</powermock.version>
 		<swagger2.version>2.7.0</swagger2.version>
 		<spring-cloud.version>Dalston.SR4</spring-cloud.version>
+		<mybatis-version>3.2.0</mybatis-version>
 	</properties>
 
 	<dependencyManagement>
@@ -57,7 +58,7 @@
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>
-			<version>3.2.0</version>
+			<version>${mybatis-version}</version>
 		</dependency>
 
 		<dependency>
