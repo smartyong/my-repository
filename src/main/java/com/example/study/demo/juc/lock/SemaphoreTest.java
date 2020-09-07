@@ -16,13 +16,13 @@ public class SemaphoreTest {
             new Thread(() -> {
                 try {
                     semaphore.acquire();
-                    System.out.println(Thread.currentThread().getId() + "  " + num + "占领了车位");
+                    System.out.println(Thread.currentThread().getName() + "  " + num + "占领了车位");
                     try {
                         TimeUnit.SECONDS.sleep(3);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(Thread.currentThread().getId() + " 3秒后离开车位 ");
+                    System.out.println(Thread.currentThread().getName() + " 3秒后离开车位 ");
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
