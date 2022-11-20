@@ -4,9 +4,13 @@ server:
 spring:
   datasource:
     name:
-    url: jdbc:mysql://45.32.233.23:3306/test
+    url: jdbc:mysql://127.0.0.1:3306/heima
     username: root
-    password: ~QE123
+    password: jkkc20191216
     driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    #password: ~QEtu123321
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
